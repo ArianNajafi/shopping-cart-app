@@ -1,0 +1,31 @@
+.cartPage{
+    margin-top: 2vh;
+    background-color:#fff;
+    width: 100%;
+    min-height: 95vh;
+}
+
+.productList{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cartPage_header{
+    display: flex;
+    width: 95%;
+    justify-content: space-between;
+    padding: 1px 10px;
+}
+.cartPage_titles h3{
+    color: rgb(44, 44, 44);
+}
+.cartPage_titles h4{
+    color: rgb(100, 100, 100);
+    font-weight: 500;
+}
+.cartPage_more{
+    color: rgb(100, 100, 100);
+    font-size: 1.5rem;
+}

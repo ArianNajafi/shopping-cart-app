@@ -1,0 +1,87 @@
+.productInCart{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 220px;
+    padding: 5px 0;
+}
+
+.img_info_section{
+    width: 95%;
+    display: flex;
+    /* align-items: center; */
+    margin: 15px 0;
+}
+
+.productImgDiv{
+    width: 120px;
+    height: 140px;
+    background-color: #fff;
+    margin-right: 5px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.productInfo{
+    margin-top: 8px;
+    color: rgb(90, 90, 90);
+    font-size: 0.9rem;
+}
+
+.productImg{
+    width: 100%;
+    height: auto;
+}
+
+.productName_inCart{
+    color: black;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.price_number_section{
+    margin-right: 20px;
+    width: 220px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.controlNumber{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 77px;
+    padding: 0 5px;
+    height: 35px;
+    border-radius: 8px;
+    border: 1px solid rgb(218, 218, 218);
+    font-size: 1rem;
+    color: rgb(239 68 68);
+}
+.controlNumber p{
+    font-size: 0.9rem;
+    cursor: context-menu;
+}
+.controlNumber .addNumber_btn{
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+.controlNumber .minesNumber_btn{
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+.removeProduct_btn{
+    cursor: pointer;
+}
+
+.product_price{
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.hr{
+    border-top: 1px solid  rgb(218, 218, 218);
+}
+
