@@ -3,6 +3,10 @@
   width: 100vw;
   direction: rtl;
   font-family: 'Yekan';
+
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  user-select:none;
 }
 
 

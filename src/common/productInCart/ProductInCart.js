@@ -2,8 +2,10 @@ import './ProductInCart.css'
 import { CgTrash } from 'react-icons/cg'
 import { BiPlus } from 'react-icons/bi'
 import { HiMinusSm } from 'react-icons/hi'
+import { useCartStateDispatcher } from '../../contexts/CartProvider'
 
 const ProductInCart = ({ product }) => {
+    const cartStateDispatcher = useCartStateDispatcher();
 
     return (
         <div className="productInCart">
@@ -18,10 +20,12 @@ const ProductInCart = ({ product }) => {
             </div>
             <div className="price_number_section">
                 <div className="controlNumber">
-                    <BiPlus className='addNumber_btn' />
+                    <BiPlus className='addNumber_btn' onClick={() => cartStateDispatcher({ type: "ADD_TO_CART", product: product })} />
                     <p>{product.number}</p>
-                    {product.number === 1 ? <CgTrash className='removeProduct_btn' /> : <HiMinusSm className='minesNumber_btn' />}
-
+                    {product.number === 1 ?
+                        < CgTrash className='removeProduct_btn' onClick={() => cartStateDispatcher({ type: "DELETE_FROM_CART", product: product })} /> :
+                        <HiMinusSm className='minesNumber_btn' onClick={() => cartStateDispatcher({ type: "MINES_PRODUCT", product: product })} />
+                    }
                 </div>
                 <p className="product_price">{product.price} تومان</p>
             </div>

@@ -9,7 +9,7 @@ const HomePage = () => {
         <div className="homePage">
             <section className='productsList'>
                 {products.map((product, index) => {
-                    return <Product key={index} datas={product} />
+                    return <Product key={index} product={product} />
                 })}
             </section>
         </div>

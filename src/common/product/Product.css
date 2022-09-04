@@ -1,19 +1,22 @@
 .product{
-    width: 370px;
+    width: 350px;
     height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #fff;
     margin-bottom: 10px;
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    flex-grow: 1;
+    color: rgb(54, 54, 54);
 }
 .product_img_section{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 80%;
-    margin: 10px 0;
+    width: 95%;
+    height: 75%;
+    margin: 0px 0;
 }
 .product_img{
     width: 65%;
@@ -21,13 +24,55 @@
     border-radius: 10px 10px 0 0 ;
 }
 
-.product_info{
-    margin-top: 17px;
-    padding: 5px;
+.product_name{
+    /* margin-top: 17px; */
+    padding: 0px 11px;
     display: flex;
-    justify-content: space-evenly;
+    font-size: 1rem;
+    width: 92%;
+    font-weight: bolder;
     color: rgb(39, 39, 39);
 }
+.product_price_state{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 20px;
+}
+
+.product_price{
+    font-weight: lighter;
+    font-size: 0.97rem;
+}
+
+.addProduct_btn{
+    width: 100px;
+    height: 35px;
+    background-color:#ef4056;
+    border-radius: 7px;
+    border: 1px solid#ef4056;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: bolder;
+    font-family: 'Yekan';
+    cursor: pointer;
+}
+.addedProduct_btn{
+    width: 100px;
+    height: 35px;
+    background-color: #fff;
+    border-radius: 7px;
+    border: 1px solid#ef4056;
+    color: #ef4056;
+    font-size: 0.7rem;
+    font-weight: bolder;
+    font-family: 'Yekan';
+    cursor: pointer;
+}
+
+
+
 
 @media(max-width : 320px){
     .product{
