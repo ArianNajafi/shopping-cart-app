@@ -19,7 +19,6 @@ const CartPage = () => {
             </div>
             {cartState.cart.length !== 0 ?
                 <div className='productList'>
-                    {/* <hr className='hr'></hr> */}
                     {cartState.cart.map((item) => {
                         return <ProductInCart product={item} key={item.id} />
                     })}
@@ -31,25 +30,49 @@ const CartPage = () => {
                 </div>
             }
             {cartState.cart.length !== 0 ?
-                <div className='cartSummary'>
-                    <div className='summary_real_totalPrice'>
-                        <p>قیمت کالاها({cartState.totalNum})</p>
-                        <p>{cartState.totalPrice} تومان</p>
-                    </div>
-                    <div className='summary_off_totalPrice'>
-                        <p>جمع سبد خرید</p>
-                        <p>{cartState.totalPrice} تومان</p>
-                    </div>
-                    <div className='summary_off_discount'>
-                        <p>سود شمااز خرید</p>
-                        <p>720000 تومان</p>
-                    </div>
-                </div>
+                <CartSummary />
                 :
                 <></>
             }
+
         </div>
     );
 }
 
-export default CartPage; 
+export default CartPage;
+
+
+const CartSummary = () => {
+    const cartState = useCartState();
+
+    const totalPrice = cartState.totalPrice;
+    const totalPrice_off = cartState.cart.reduce((prevValue, currValue) => {
+        return prevValue + currValue.offPrice * currValue.number
+    }, 0)
+
+    return (
+        <div className='cartSummary'>
+            <div className='summary_real_totalPrice'>
+                <p>قیمت کالاها({cartState.totalNum})</p>
+                <p>{totalPrice} تومان</p>
+            </div>
+            <div className='summary_off_totalPrice'>
+                <p>جمع سبد خرید</p>
+                <p>{totalPrice_off} تومان</p>
+            </div>
+            <div className='summary_off_discount'>
+                <p>سود شما از خرید</p>
+                <p>{totalPrice - totalPrice_off} تومان</p>
+            </div>
+            <button className='checkoutBtn'>تکمیل خرید  </button>
+            {/* checkout for mobile */}
+            <div className='checkout_bar'>
+                <button>تکمیل خرید</button>
+                <div>
+                    <p className='p1'>جمع سبد خرید</p>
+                    <p className='p2'>{totalPrice_off} تومان</p>
+                </div>
+            </div>
+        </div>
+    )
+}

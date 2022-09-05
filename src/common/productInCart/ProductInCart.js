@@ -29,7 +29,6 @@ const ProductInCart = ({ product }) => {
                 </div>
                 <p className="product_price">{product.price} تومان</p>
             </div>
-            <hr className='hr'></hr>
         </div >
     );
 }
