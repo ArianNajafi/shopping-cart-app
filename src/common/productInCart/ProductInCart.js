@@ -3,6 +3,7 @@ import { CgTrash } from 'react-icons/cg'
 import { BiPlus } from 'react-icons/bi'
 import { HiMinusSm } from 'react-icons/hi'
 import { useCartStateDispatcher } from '../../contexts/CartProvider'
+import { toPersianNumber } from '../../utility/toPersianNumber'
 
 const ProductInCart = ({ product }) => {
     const cartStateDispatcher = useCartStateDispatcher();
@@ -27,7 +28,7 @@ const ProductInCart = ({ product }) => {
                         <HiMinusSm className='minesNumber_btn' onClick={() => cartStateDispatcher({ type: "MINES_PRODUCT", product: product })} />
                     }
                 </div>
-                <p className="product_price">{product.price} تومان</p>
+                <p className="product_price">{toPersianNumber(product.price)} تومان</p>
             </div>
         </div >
     );

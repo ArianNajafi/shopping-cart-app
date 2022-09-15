@@ -4,6 +4,7 @@ import img from "../../img/istockphoto-1327712003-612x612-removebg-preview.png"
 
 import { useCartState } from '../../contexts/CartProvider';
 import ProductInCart from '../../common/productInCart/ProductInCart';
+import { toPersianNumber } from '../../utility/toPersianNumber'
 
 const CartPage = () => {
     const cartState = useCartState();
@@ -13,7 +14,7 @@ const CartPage = () => {
             <div className='cartPage_header'>
                 <div className='cartPage_titles'>
                     <h3>سبد خرید شما</h3>
-                    <h4>{`${(cartState.totalNum)} کالا`}</h4>
+                    <h4>{`${toPersianNumber(cartState.totalNum)} کالا`}</h4>
                 </div>
                 <MdOutlineMoreVert className='cartPage_more' />
             </div>
@@ -54,15 +55,15 @@ const CartSummary = () => {
         <div className='cartSummary'>
             <div className='summary_real_totalPrice'>
                 <p>قیمت کالاها({cartState.totalNum})</p>
-                <p>{totalPrice} تومان</p>
+                <p>{toPersianNumber(totalPrice)} تومان</p>
             </div>
             <div className='summary_off_totalPrice'>
                 <p>جمع سبد خرید</p>
-                <p>{totalPrice_off} تومان</p>
+                <p>{toPersianNumber(totalPrice_off)} تومان</p>
             </div>
             <div className='summary_off_discount'>
                 <p>سود شما از خرید</p>
-                <p>{totalPrice - totalPrice_off} تومان</p>
+                <p>{toPersianNumber(totalPrice - totalPrice_off)} تومان</p>
             </div>
             <button className='checkoutBtn'>تکمیل خرید  </button>
             {/* checkout for mobile */}
@@ -70,7 +71,7 @@ const CartSummary = () => {
                 <button>تکمیل خرید</button>
                 <div>
                     <p className='p1'>جمع سبد خرید</p>
-                    <p className='p2'>{totalPrice_off} تومان</p>
+                    <p className='p2'>{toPersianNumber(totalPrice_off)} تومان</p>
                 </div>
             </div>
         </div>

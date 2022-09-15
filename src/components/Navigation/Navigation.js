@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
-import { useCartState } from "../../contexts/CartProvider"
+import { useCartState } from "../../contexts/CartProvider";
+import { toPersianNumber } from '../../utility/toPersianNumber'
 
 
 const Navigation = () => {
@@ -11,7 +12,7 @@ const Navigation = () => {
                 <NavLink to="/" className={({ isActive }) => isActive ? "navItem navItemActive" : "navItem"}>فروشگاه</NavLink>
                 <div className="cartItem_section">
                     <NavLink to="/cart" className={({ isActive }) => isActive ? "navItem navItemActive" : "navItem"}>سبد خرید</NavLink>
-                    <span>{cartState.totalNum}</span>
+                    <span>{toPersianNumber(cartState.totalNum)}</span>
                 </div>
             </nav>
         </header>

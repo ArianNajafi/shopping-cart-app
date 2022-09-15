@@ -5,6 +5,7 @@ import { useContext } from 'react';
 import { useCartState, useCartStateDispatcher } from '../../contexts/CartProvider';
 import { getEsistenceProduct } from '../../utility/existenceProduct_inCart';
 import { useNavigate } from 'react-router-dom';
+import { toPersianNumber } from '../../utility/toPersianNumber';
 
 const Product = ({ product }) => {
     const navigate = useNavigate();
@@ -34,7 +35,7 @@ const Product = ({ product }) => {
                     }}>
                     {getEsistenceProduct(cartState.cart, product) ? "ادامه خرید" : "افزودن به سبد"}
                 </button>
-                <p className='product_price'>{product.price} تومان</p>
+                <p className='product_price'>{toPersianNumber(product.price)}  تومان</p>
             </div>
         </div >
     );
