@@ -71,8 +71,10 @@ const CartSummary = () => {
                 <p>سود شما از خرید</p>
                 <p>{toPersianNumber(totalPrice - totalPrice_off)} تومان</p>
             </div>
-            <button className='checkoutBtn'>تکمیل خرید  </button>
-            {/* checkout for mobile */}
+            <button className='checkoutBtn' onClick={() => navigate("/singUp")}>تکمیل خرید  </button>
+
+            {/* for mobile we have check bar but for laptops widts dont
+            have check bar and checkBtn come with cartSummary - */}
             <div className='checkout_bar'>
                 <button onClick={() => navigate("/singUp")}>تکمیل خرید</button>
                 <div>
