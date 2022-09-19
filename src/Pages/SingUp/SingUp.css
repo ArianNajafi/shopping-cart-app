@@ -1,0 +1,85 @@
+.singUpPage{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+
+.singUp_form{
+    width: 350px;
+    height: 510px;
+    /* border: 1px solid rgb(212, 212, 212); */
+    border-radius: 8px;
+    padding: 1px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.singUp_form_title{
+    font-family: 'Yekan-bold';
+    font-size: 1.5rem;
+    margin: 10px 10px 20px 0;
+    width: 98%;
+}
+
+.formControl{
+    width: 98%;
+}
+
+.singUp_labels{
+    display: block;
+    width: 99%;
+    margin-bottom: 2px;
+    color :rgb(70, 70, 70);
+    font-size: 1.1rem;
+}
+.singUp_inputs{
+    width: 95%;
+    height: 30px;
+    border-radius: 6px;
+    outline: none;
+    border: 1px solid rgb(170, 170, 170);
+    padding: 1px 10px;
+    font-size: 0.9rem;
+    color:rgb(94, 94, 94);
+    font-family: 'Yekan';
+    
+}
+.singUp_inputs:focus{
+    border: 1px solid rgb(239 68 68);
+}
+
+.singUp_btn{
+    width: 98%;
+    min-height: 40px;
+    color: #fff;
+    background-color: rgb(239 68 68);
+    border: 1px solid  rgb(239 68 68);
+    border-radius: 6px;
+    font-family: 'Yekan';
+    font-size: 1.1rem;
+    margin-top: 35px;
+    cursor: pointer;
+}
+.singUp_btn:disabled{
+    cursor: no-drop;
+    opacity: 0.6;
+}
+
+.formErrors{
+    height: 20px;
+    margin-bottom: 7px;
+    font-size: 0.8rem;
+    color:  rgb(239 68 68);
+}
+
+
+@media(min-width: 1024px){
+    .singUp_form{
+        border: 1px solid rgb(212, 212, 212);
+    }
+}

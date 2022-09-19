@@ -8,4 +8,11 @@
 @font-face {
   font-family: 'Yekan';
   src: url('./fonts/Yekan.woff2');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Yekan-bold';
+  src: url('./fonts/Yekan.woff2');
+  font-weight: normal;
 }
