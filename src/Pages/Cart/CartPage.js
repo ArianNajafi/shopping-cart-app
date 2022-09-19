@@ -6,6 +6,7 @@ import { useCartState } from '../../contexts/CartProvider';
 import ProductInCart from '../../common/productInCart/ProductInCart';
 import { toPersianNumber } from '../../utility/toPersianNumber'
 import Layout from '../../container/Layout';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const CartPage = () => {
     const cartState = useCartState();
@@ -48,11 +49,13 @@ export default CartPage;
 
 const CartSummary = () => {
     const cartState = useCartState();
+    const navigate = useNavigate();
 
     const totalPrice = cartState.totalPrice;
     const totalPrice_off = cartState.cart.reduce((prevValue, currValue) => {
         return prevValue + currValue.offPrice * currValue.number
     }, 0)
+
 
     return (
         <div className='cartSummary'>
@@ -71,7 +74,7 @@ const CartSummary = () => {
             <button className='checkoutBtn'>تکمیل خرید  </button>
             {/* checkout for mobile */}
             <div className='checkout_bar'>
-                <button>تکمیل خرید</button>
+                <button onClick={() => navigate("/singUp")}>تکمیل خرید</button>
                 <div>
                     <p className='p1'>جمع سبد خرید</p>
                     <p className='p2'>{toPersianNumber(totalPrice_off)} تومان</p>
