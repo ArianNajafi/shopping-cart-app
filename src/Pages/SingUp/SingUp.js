@@ -1,6 +1,7 @@
 import './SingUp.css';
 import { useFormik } from 'formik'
 import * as yup from 'yup';
+import { NavLink } from 'react-router-dom'
 
 const SingUpPage = () => {
 
@@ -12,7 +13,7 @@ const SingUpPage = () => {
     const formik = useFormik({
         initialValues: {
             name: "",
-            phoneNumber: "",
+            email: "",
             password: "",
             confirmPassword: "",
         },
@@ -26,7 +27,7 @@ const SingUpPage = () => {
 
         validationSchema: yup.object({
             name: yup.string().required("اسم خود را وارد کنید"),
-            phoneNumber: yup.string().required("شماره تلفن خود را وارد کنید"),
+            email: yup.string().required("ایمیل خود را وارد کنید").email("ایمیل وارد شده درست نمیباشد"),
             password: yup.string().required("رمز عبور خود را وارد کنید"),
             confirmPassword: yup.string().required("تکرار رمز عبور خود را وارد کنید").oneOf([yup.ref("password"), null], "تکرار رمز عبور مطابقت ندارد")
         }),
@@ -54,14 +55,14 @@ const SingUpPage = () => {
                 </div>
 
                 <div className="formControl">
-                    <label className='singUp_labels'>شماره همراه</label>
+                    <label className='singUp_labels'>ایمیل</label>
                     <input className='singUp_inputs'
                         type="text"
-                        value={formik.values.phoneNumber}
-                        onChange={formik.handleChange("phoneNumber")}
-                        onBlur={formik.handleBlur("phoneNumber")}
+                        value={formik.values.email}
+                        onChange={formik.handleChange("email")}
+                        onBlur={formik.handleBlur("email")}
                     ></input>
-                    <p className='formErrors'>{formik.errors.phoneNumber && formik.touched.phoneNumber ? formik.errors.phoneNumber : ""}</p>
+                    <p className='formErrors'>{formik.errors.email && formik.touched.email ? formik.errors.email : ""}</p>
                 </div>
 
                 <div className="formControl">
@@ -87,6 +88,11 @@ const SingUpPage = () => {
                 </div>
 
                 <button className="singUp_btn" disabled={!formik.isValid}>ثبت‌نام</button>
+
+                <div className='goToLoginDiv'>
+                    قبلا ثبت‌نام کردید؟
+                    <NavLink to="/login" className='goToLoginBtn'>وارد شوید</NavLink>
+                </div>
             </form>
 
         </div>
