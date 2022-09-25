@@ -71,6 +71,7 @@ const CartSummary = () => {
                 <p>سود شما از خرید</p>
                 <p>{toPersianNumber(totalPrice - totalPrice_off)} تومان</p>
             </div>
+            <p className='summary_note'>هزینه ارسال براساس آدرس، زمان تحویل، وزن و حجم مرسوله شما محاسبه می‌شود</p>
             <button className='checkoutBtn' onClick={() => navigate("/singUp")}>تکمیل خرید  </button>
 
             {/* for mobile we have check bar but for laptops widts dont

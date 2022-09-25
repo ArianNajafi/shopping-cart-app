@@ -8,17 +8,16 @@
 
 .cartPage_header{
     display: flex;
-    width: 95%;
+    width: 97%;
     justify-content: space-between;
-    padding: 1px 15px;
+    margin: 0 auto;
 }
 .cartPage_titles h3{
     color: rgb(44, 44, 44);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 .cartPage_titles h4{
     color:rgb(151, 151, 151);
-    font-weight: 500;
 }
 .cartPage_more{
     color:rgb(151, 151, 151);
@@ -45,23 +44,29 @@
     font-size: 0.93rem;
 }
 .summary_real_totalPrice{
-    width: 89%;
+    width: 98%;
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
     color: rgb(99, 99, 99);
 }
 .summary_off_totalPrice{
-    width: 89%;
+    width: 98%;
     display: flex;
     justify-content: space-between;
     margin-bottom: 25px;
 }
 .summary_off_discount{
-    width: 89%;
+    width: 98%;
     display: flex;
     justify-content: space-between;
     color: rgb(239 68 68);
+    margin-bottom: 95px;
+}
+.summary_note{
+    color: rgb(128, 128, 128);
+    font-size: 0.8rem;
+    width: 98%;
 }
 .checkoutBtn{
     display: none;
@@ -70,7 +75,7 @@
     border-radius: 8px;
     background-color: #ef4056;
     border: 1px solid #ef4056;
-    margin-top: 150px;
+    margin-top: 10px;
     cursor: pointer;
     color: #fff;
     font-size: 0.9rem;
@@ -137,9 +142,8 @@
 }
 
 .cartEmpity p{
-    font-weight: 600;
+    font-family: "Yekan-bold";
     margin-top: -30px;
-
 }
 
 
@@ -178,17 +182,6 @@
 
     .checkoutBtn{
         display: block;
-        width: 100%;
-        height: 70px;
-        border-radius: 8px;
-        background-color: #ef4056;
-        border: 1px solid #ef4056;
-        margin-top: 150px;
-        cursor: pointer;
-        color: #fff;
-        font-size: 0.9rem;
-        font-weight: 500;
-        font-family: 'Yekan';
     }
 
     /*check bar for mobile*/
